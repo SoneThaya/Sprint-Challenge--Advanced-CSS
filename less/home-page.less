@@ -35,7 +35,7 @@
       color:#999;
       width:50%;
       bottom:45%;
-      height: 60px;
+      height: 70px;
 
       #flip {
         height:50px;
@@ -46,7 +46,7 @@
         color:#fff;
         padding:4px 12px;
         height:50px;
-        margin-bottom:50px;
+        margin-bottom:70px;
         display:inline-block;
       }
       
@@ -137,8 +137,6 @@
       }
     }
 
-    
-
     .walk-text {
       width: 50%;
 
@@ -151,7 +149,7 @@
       }
 
       .sign-up {
-        .custom-btn(black, 200px, lightgrey)
+        .custom-btn(@bgcolor, 200px, @fontcolor)
       }
          
          @media @phone {
@@ -159,7 +157,7 @@
            height: 50px;
            font-size: 2.5rem;
            .sign-up {
-            .custom-btn(lightgrey, 100%,black)
+            .custom-btn(@fontcolor, 100%, @bgcolor)
           }
          }// this closes the 500px media query 
          
