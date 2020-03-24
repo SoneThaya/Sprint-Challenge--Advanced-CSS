@@ -2,7 +2,27 @@
 
 .home {
 
+  .container {
+    padding-top: 300px;
+    
+  }
+
   .intro {
+
+    padding-top: 200px;
+    img{
+      border-radius: 5px;
+    }
+
+    @media @phone {
+      padding-top: 125px;
+      .center();
+
+      img {
+        width: 100%;
+        ;
+      }
+    }
 
     h2 {
       padding: 15px;
@@ -11,6 +31,57 @@
     p {
       padding:0 15px;
     }
+    #flipper {
+      color:#999;
+      width:50%;
+      bottom:45%;
+      height: 70px;
+
+      #flip {
+        height:50px;
+        overflow:hidden;
+      }
+      
+      #flip > div > div {
+        color:#fff;
+        padding:4px 12px;
+        height:50px;
+        margin-bottom:70px;
+        display:inline-block;
+      }
+      
+      #flip div:first-child {
+        animation: show 5s linear infinite;
+      }
+      
+      #flip div div {
+        background:#42c58a;
+      }
+      #flip div:first-child div {
+        background:#4ec7f3;
+      }
+      #flip div:last-child div {
+        background:#DC143C;
+      }
+      
+      @keyframes show {
+        0% {margin-top:-270px;}
+        5% {margin-top:-180px;}
+        33% {margin-top:-180px;}
+        38% {margin-top:-90px;}
+        66% {margin-top:-90px;}
+        71% {margin-top:0px;}
+        99.99% {margin-top:0px;}
+        100% {margin-top:-270px;}
+      }
+    }
+    #flipper h2{
+      width: 50%;
+      margin: 0;
+      .center();
+    }
+
+    
   
   }
 
@@ -24,6 +95,15 @@
       margin: 20px 2.5%;
       border-radius: 20px;
       height: 100%;
+    }
+    @media @phone {
+      img {
+        width: 90%;
+        
+      }
+      .sky, .launch {
+        display: none;
+      }
     }
   }
 
@@ -44,7 +124,18 @@
     border-top: 1px solid @main-border-color;
     padding: 50px 60px;
     display: flex;
-    justify-content: center;
+    .center();
+
+    @media @phone {
+      flex-direction: column-reverse;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      
+      img{
+        .width90();
+      }
+    }
 
     .walk-text {
       width: 50%;
@@ -57,18 +148,41 @@
         margin-bottom: 26px;
       }
 
-      .btn {
+      .sign-up {
+        .custom-btn(@bgcolor, 200px, @fontcolor)
       }
+         
+         @media @phone {
+           .width90();
+           height: 50px;
+           font-size: 2.5rem;
+           .sign-up {
+            .custom-btn(@fontcolor, 100%, @bgcolor)
+          }
+         }// this closes the 500px media query 
+         
+         
     }
 
     .walk-img {
       width: 46%;
       margin-left: 4%;
+
+      @media @phone {
+        width: 100%;
+        padding: 2%
+      }
       
       img {
         width: 100%;
         height: auto;
         border-radius: 10px;
+      }
+
+      @media @phone {
+        img {
+         .width90();
+        }
       }
     }
   }
